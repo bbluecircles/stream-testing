@@ -1,0 +1,146 @@
+:root {
+    --color-primary: #116ACC;
+    --color-secondary-1: #182233;
+    --color-secondary-2: #B3CEE2;
+    --color-secondary-3: #D9DDE7;
+    --color-secondary-4: #FD4E5D;
+    --text-color-light: #E0E3E6;
+    --content-padding-y: 62px;
+    --content-padding-x: 43px;
+    --sub-block-padding-y: 32px;
+    --default-gap: 32px;
+}
+
+@font-face {
+    src: "../fonts/Ubuntu-Light.ttf";
+    font-family: Ubuntu;
+    font-weight: 300;
+}
+
+@font-face {
+    src: "../fonts/Ubuntu-Regular.ttf";
+    font-family: Ubuntu;
+    font-weight: 400;
+}
+
+@font-face {
+    src: "../fonts/Ubuntu-Medium.ttf";
+    font-family: Ubuntu;
+    font-weight: 500;
+}
+@font-face {
+    src: "../fonts/Ubuntu-Bold.ttf";
+    font-family: Ubuntu;
+    font-weight: 600;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Ubuntu;
+}
+
+.page {
+    width: calc(100vw - (var(--content-padding-x) * 2));
+    min-height: calc(100vh - (var(--content-padding-y) * 2));
+    background-color: var(--color-secondary-3);
+    padding: var(--content-padding-y) var(--content-padding-x);
+}
+
+.page[data-page="webcam-view"] {
+    height: calc(100vh - (var(--content-padding-y) * 2));
+}
+
+.webcam-view--container {
+    height: 100%;
+}
+
+.webcam-view {
+    position: relative;
+    height: 100%;
+    display: grid;
+}
+
+.webcam-view:not(.webcam-active) .webcam {
+    display: none;
+}
+
+.webcam-view.webcam-active .webcam-loader {
+    display: none;
+}
+
+.webcam-loader {
+    display: grid;
+    background-color: var(--color-secondary-1);
+    place-content: center;
+    padding: var(--content-padding-y) var(--content-padding-x);
+    border-radius: 20px;
+}
+
+.spinner {
+    position: relative;
+}
+
+.sub-block {
+    padding: var(--sub-block-padding-y) 0;
+}
+
+.flex {
+    display: flex;
+    gap: var(--default-gap);
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.no-shrink {
+    flex-shrink: 0;
+}
+
+.flex-one {
+    flex: 1;
+}
+
+.webcam-loader:not(.loading)::after {
+    content: "Press \"Enable\" to start webcam";
+    text-align: center;
+    font-size: 32px;
+    line-height: 1.5em;
+    color: var(--color-secondary-2);
+}
+
+button.action-button {
+    display: grid;
+    place-content: center;
+    padding: 16px 24px;
+    border-radius: 8px;
+    border: none;
+    outline:none;
+    text-transform: uppercase;
+    font-weight:bold;
+    cursor: pointer;
+}
+
+button.action-button.primary {
+    background-color: var(--color-primary);
+    color: var(--text-color-light);
+}
+
+button.action-button.secondary-4 {
+    background-color: var(--color-secondary-4);
+    color: var(--text-color-light);
+}
+
+button.action-button[disabled] {
+    opacity: 0.7;
+}

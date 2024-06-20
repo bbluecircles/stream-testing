@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pose Estimation Streaming</title>
+        <meta name="description" content="A brief description of your web app">
+        <meta name="keywords" content="web, app, your, keywords">
+        <meta name="author" content="James Aaron Luna">
+        <link rel="stylesheet" href="./content/styles/styles.css">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <!-- Include any external CSS libraries if needed -->
+    </head>
+    
+    <body>
+        <div id="app">
+            <div class="page" data-page="webcam-view">
+                <div class="webcam-view--container flex-column">
+                    <div class="webcam-view flex-one">
+                        <div class="webcam">
+                            <video id="video" width="640" height="480" autoplay></video>
+                            <video id="recordedVideo" width="640" height="480" controls></video>
+                        </div>
+                        <div class="webcam-loader">
+                            <div class="webcam-loader--body">
+                                <div class="spinner">
+                                    <div class="ellipse"></div>
+                                    <div class="ellipse-top"></div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="bar">
+                                        <div class="progress">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions sub-block flex no-shrink justify-center">
+                        <div class="action-buttons flex align-center">
+                            <button title="Turn on webcam" class="action-button primary js-enable-camera">Enable</button>
+                            <button title="Turn off webcam" class="action-button secondary-4 js-disable-camera" disabled="true">Disable</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="./src/index.js"></script>
+    </body>
+</html>
