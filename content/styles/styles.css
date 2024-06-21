@@ -65,6 +65,24 @@ body {
     display: none;
 }
 
+.webcam {
+    border-radius: 20px;
+    padding: 16px;
+    background: var(--color-secondary-1);
+}
+
+.webcam-video-wrapper {
+    overflow: hidden;
+}
+
+.video-wrapper {
+    border-radius: 20px;
+}
+
+.webcam #recordedVideo {
+    display: none;
+}
+
 .webcam-view.webcam-active .webcam-loader {
     display: none;
 }

@@ -18,8 +18,13 @@
                 <div class="webcam-view--container flex-column">
                     <div class="webcam-view flex-one">
                         <div class="webcam">
-                            <video id="video" width="640" height="480" autoplay></video>
-                            <video id="recordedVideo" width="640" height="480" controls></video>
+                            <div class="webcam-video-wrapper">
+
+                               <div class="video-wrapper">
+                                <video id="video" width="640" height="480" autoplay></video>
+                               </div> 
+                                <video id="recordedVideo" width="640" height="480" controls></video>
+                            </div>
                         </div>
                         <div class="webcam-loader">
                             <div class="webcam-loader--body">
